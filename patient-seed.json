@@ -1,0 +1,48 @@
+[
+    {
+        "lastName": "Smith",
+        "firstName": "Fred",
+        "town": "Arlington",
+        "Medications": [
+            {
+                "medname": "morphine",
+                "dose": "10mg",
+                "startDate": "10/10/15"
+            },
+            {
+                "medname": "acetaminophen",
+                "dose": "325mg",
+                "startDate": "10/11/15",
+                "stopDate": "10/14/15"
+            },
+            {
+                "medname": "furosemide",
+                "dose": "20mg",
+                "startDate": "10/31/15"
+            }
+        ]
+    },
+    {
+        "lastName": "Jones",
+        "firstName": "Sally",
+        "town": "Milford",
+        "Medications": [
+            {
+                "medname": "morphine",
+                "dose": "15mg",
+                "startDate": "10/11/15"
+            },
+            {
+                "medname": "coumadin",
+                "dose": "5mg",
+                "startDate": "10/15/15"
+            },
+            {
+                "medname": "lovenox",
+                "dose": "100mg/mL",
+                "startDate": "10/31/15",
+                "stopDate": "11/2/15"
+            }
+        ]
+    }
+]
