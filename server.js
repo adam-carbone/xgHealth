@@ -32,7 +32,9 @@ app.use(function(req, res, next) {
     next(err);
 });
 
-var server = app.listen(3000, function() {
+var port = process.env.PORT || 3000
+
+var server = app.listen(port, function() {
     var host = 'localhost';
     var port = server.address().port;
     console.log('App listening at http://%s:%s', host, port);
