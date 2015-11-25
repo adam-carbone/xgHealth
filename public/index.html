@@ -1,0 +1,94 @@
+<!-- index.html -->
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="patientApp">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>xgHealth Programming Exercise</title>
+
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #todo-list              { margin-bottom:30px; }
+    </style>
+
+
+    <script src="vendor/bower_components/jquery/dist/jquery.js"></script><!-- load jquery -->
+    <script src="vendor/bower_components/angular/angular.js"></script><!-- load angular -->
+    <script src="js/app.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER AND GET ALL patients -->
+<body ng-controller="mainController">
+    <div class="container">
+
+        <!-- HEADER AND TODO COUNT -->
+        <!-- <div class="jumbotron text-center">
+            <h1>I'm a Todo-aholic <span class="label label-info">{{ todos.length }}</span></h1>
+        </div> -->
+
+        <!-- Patient LIST -->
+        <div id="patient-list" class="row">
+            <div class="col-sm-4 col-sm-offset-4">
+
+                <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                <div class="checkbox" ng-repeat="patient in patients">
+                    <label>
+                        <input type="checkbox" ng-click="getPatientDetails(patient._id)" >
+                     {{ patient.lastName }}, {{ patient.firstName }}
+                    </label>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- FORM TO CREATE TODOS -->
+        <div id="patient-detail" class="row">
+
+            <div id="todo-form" class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <form>
+                        <div class="form-group">
+
+                            <!-- LOOP OVER THE Medications IN $scope.medications -->
+                            <div ng-repeat="medication in patientMedications">
+                                <label>
+                                    Name:
+                                </label>
+                                {{ medication.medname }}
+
+                                <label>
+                                    Dosage:
+                                </label>
+                                {{ medication.dose }}
+
+                                <label>
+                                    Prescribed for:
+                                </label>
+                                {{ medication.startDate }} - {{medication.stopDate}}
+                                
+                            </div>
+                            <label>
+                                Pulse Rate:<input type="text" class="form-control input-lg text-center" ng-model="patientVitals.pulse" >
+                            </label>
+                            <label>
+                                Temperature:<input type="text" class="form-control input-lg text-center" ng-model="patientVitals.temp" >
+                            </label>
+                        </div>
+
+                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                        <button type="submit" class="btn btn-primary btn-lg" ng-click="saveVitals(patient._id, )">Add Vitals</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
